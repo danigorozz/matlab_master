@@ -1,0 +1,42 @@
+component motor_cc_with_equations
+    outputs
+        V = { 0.0, 'V' };       %V:bottom
+    end
+    parameters
+       r = { 10, 'Ohm' };           % Rotor Resistance
+       l = { 1e-2, 'H' };           % Rotor Inductance
+       j = { 0.01, 'kg*m^2' };      % Inertia
+       k = { 0.1, 'V/(rad/s)' };    % Back EMF constant
+    end
+    nodes
+        p = foundation.electrical.electrical; % +
+        n = foundation.electrical.electrical; % -
+        R = foundation.mechanical.rotational.rotational; % R
+        C = foundation.mechanical.rotational.rotational; % C
+    end
+    annotations
+        p : Side = left;
+        n : Side = left;
+        R : Side = right;
+        C : Side = right;
+    end
+    variables
+        i = { 0, 'A' };     % Through Current
+        v = { 0, 'V' };     % Across Voltage
+        eb = { 0, 'V' };    % Voltage in eb
+        t = { 0, 'N*m' };   % Through Torque
+        w = { 0, 'rad/s' }; % Across Angular velocity
+    end
+    branches
+        i : p.i -> n.i;
+        t : R.t -> C.t;
+    end
+    equations
+        v == p.v - n.v;
+        w == R.w - C.w;
+        eb == k*w;
+        v == l*i.der + r*i + eb;
+        t == -k*i + j*w.der;
+        V == eb;
+    end
+end

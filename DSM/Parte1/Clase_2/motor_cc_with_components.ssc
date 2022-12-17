@@ -1,0 +1,41 @@
+component motor_cc_with_components
+    outputs
+        V = { 0.0, 'V' };       %V:bottom
+    end
+    parameters
+       r = { 10, 'Ohm' };           % Rotor Resistance
+       l = { 1e-2, 'H' };           % Rotor Inductance
+       j = { 0.01, 'kg*m^2' };      % Inertia
+       k = { 0.1, 'V/(rad/s)' };    % Back EMF constant
+    end
+    nodes
+        p = foundation.electrical.electrical; % +
+        n = foundation.electrical.electrical; % -
+        R = foundation.mechanical.rotational.rotational; % R
+        C = foundation.mechanical.rotational.rotational; % C
+    end
+    annotations
+        p : Side = left;
+        n : Side = left;
+        R : Side = right;
+        C : Side = right;
+    end
+    components
+        r_comp = foundation.electrical.elements.resistor(R = r);
+        l_comp = foundation.electrical.elements.inductor(l = l);
+        sensor = foundation.electrical.sensors.voltage;
+        motor = foundation.electrical.elements.rotational_converter(K = k);
+        inertia = foundation.mechanical.rotational.inertia(inertia = j);
+    end
+    connections
+        connect(p, r_comp.p);                   % Conex A
+        connect(r_comp.n, l_comp.p);            % Conex B
+        connect(l_comp.n, sensor.p, motor.p);   % Conex C
+        connect(motor.R, inertia.J, R);         % Conex D
+        connect(motor.C, C);                    % Conex E
+        connect(sensor.n, motor.n, n);          % Conex F
+    end
+    equations
+        V == sensor.V;
+    end
+end

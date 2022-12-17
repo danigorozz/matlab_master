@@ -1,0 +1,23 @@
+component spring
+  nodes
+    R = foundation.mechanical.rotational.rotational; % R:left
+    C = foundation.mechanical.rotational.rotational; % C:right
+  end
+  parameters
+      k = { 10, 'N*m/rad' };      % Spring rate
+  end
+  variables
+    theta = { 0, 'rad' };    % Deformation
+    t = { 0, 'N*m' };        % Torque through
+    w = { 0, 'rad/s' };      % Velocity across
+  end
+  branches
+    t : R.t -> C.t;
+  end
+  equations
+    assert(k>0)     
+    w == R.w - C.w;
+    t == k * theta;
+    w == theta.der;
+  end
+end

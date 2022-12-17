@@ -1,0 +1,33 @@
+[System]
+Name='Sugeno_1entrada'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='X'
+Range=[-10 10]
+NumMFs=3
+MF1='Pequeño':'gbellmf',[4.89197530864197 2.5 -10]
+MF2='Medio':'gbellmf',[5.01543209876543 2.25 0]
+MF3='Grande':'gbellmf',[4.89197530864198 2.5 10]
+
+[Output1]
+Name='Y'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'linear',[0.1 6.4]
+MF2='mf2':'linear',[-0.5 4]
+MF3='mf3':'linear',[1 -2]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1

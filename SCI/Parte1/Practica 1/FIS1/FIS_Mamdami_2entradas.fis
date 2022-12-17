@@ -1,0 +1,41 @@
+[System]
+Name='FIS_Mamdami_2entradas'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='X'
+Range=[-5 5]
+NumMFs=2
+MF1='Pequeño':'gbellmf',[5 6.7 -5]
+MF2='Grande':'gbellmf',[5 6.99150193291746 4.974]
+
+[Input2]
+Name='Y'
+Range=[-5 5]
+NumMFs=2
+MF1='Pequeño':'gaussmf',[4.23537458609237 -5]
+MF2='Grande':'gaussmf',[4.25784341678782 5]
+
+[Output1]
+Name='Z'
+Range=[-5 5]
+NumMFs=4
+MF1='Negativo_Grande':'gbellmf',[1.46 4.32 -5]
+MF2='Negativo_Pequeño':'gbellmf',[1.46 4.32 -1.5]
+MF3='Positivo_Pequeño':'gbellmf',[1.46 4.32 1.57936507936508]
+MF4='Positivo_Grande':'gbellmf',[1.46 4.61631671758901 5]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+2 1, 3 (1) : 1
+2 2, 4 (1) : 1

@@ -1,0 +1,19 @@
+component RL_with_components
+    parameters
+       r = { 10 , 'Ohm' }; % Resistencia
+       l = { 1e-6 , 'H' }; % Inductancia
+    end
+    nodes
+       p = foundation.electrical.electrical; % +:left
+       n = foundation.electrical.electrical; % -:right
+    end
+    components
+        rc = foundation.electrical.elements.resistor(R = r);
+        rl = foundation.electrical.elements.inductor(l = l);
+    end
+    connections
+        connect(p, rc.p);       % Conex A
+        connect(rc.n, rl.p);    % Conex B
+        connect(rl.n, n);       % Conex C
+    end
+end

@@ -1,0 +1,24 @@
+component Pendulo
+    parameters
+       m = { 1 , 'kg' }; % Mass
+       l = { 0.3 , 'm' }; % Longitude
+       g = { 9.81 , 'm/s^2' }; % Gravity
+    end
+    nodes
+       r = foundation.mechanical.rotational.rotational; % r:left
+       c = foundation.mechanical.rotational.rotational; % c:right
+    end
+    variables
+       t = { 0 , 'N*m' }; % Torque through
+       w = { 0 , 'rad/s' }; % Velocity across
+       theta = { 0 , 'rad' }; % Angle
+    end
+    branches
+       t : r.t -> c.t;
+    end
+    equations
+       w == r.w - c.w;
+       w == theta.der;
+       t == m*l^2*w.der + m*g*l*sin(theta);
+    end
+end

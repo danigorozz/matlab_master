@@ -1,0 +1,16 @@
+component ideal_voltage_sensor
+  outputs
+    V = { 0.0, 'V' }; % V:bottom
+  end
+  nodes
+    p = foundation.electrical.electrical; % +:top
+    n = foundation.electrical.electrical; % -:bottom
+  end
+  variables
+    v1 = { 0, 'V' };
+  end
+  equations
+    v1 == p.v - n.v;
+    V == v1;
+  end
+end
