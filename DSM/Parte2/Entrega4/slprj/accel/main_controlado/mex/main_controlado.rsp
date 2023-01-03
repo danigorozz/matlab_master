@@ -1,0 +1,6 @@
+main_controlado_acc.obj
+main_controlado_acc_data.obj
+rtGetInf.obj
+rtGetNaN.obj
+rt_nonfinite.obj
+c_mexapi_version.obj

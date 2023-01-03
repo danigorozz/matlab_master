@@ -1,0 +1,6 @@
+main_sincontrol_acc.obj
+main_sincontrol_acc_data.obj
+rtGetInf.obj
+rtGetNaN.obj
+rt_nonfinite.obj
+c_mexapi_version.obj
