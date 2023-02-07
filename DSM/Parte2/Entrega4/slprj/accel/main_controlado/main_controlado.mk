@@ -2,7 +2,7 @@
 ## Makefile generated for component 'main_controlado'. 
 ## 
 ## Makefile     : main_controlado.mk
-## Generated on : Thu Dec 29 20:04:09 2022
+## Generated on : Mon Jan 16 18:18:47 2023
 ## Final product: ./main_controlado_acc.lib
 ## Product type : static library
 ## 
@@ -183,7 +183,7 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=1 -DALLOCATIONFCN=0 -DONESTEPFCN=0 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0
 DEFINES_CUSTOM = 
 DEFINES_OPTS = -DTID01EQ=0
-DEFINES_STANDARD = -DMODEL=main_controlado -DNUMST=2 -DNCSTATES=37 -DHAVESTDIO -DMDL_REF_SIM_TGT=1
+DEFINES_STANDARD = -DMODEL=main_controlado -DNUMST=2 -DNCSTATES=38 -DHAVESTDIO -DMDL_REF_SIM_TGT=1
 
 DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_STANDARD)
 

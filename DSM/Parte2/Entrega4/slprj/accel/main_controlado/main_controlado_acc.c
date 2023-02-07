@@ -273,41 +273,48 @@ Saturationtoavoidnegativesqrt_UprLim_ZC ) ; int_T i ; for ( i = 0 ; i < 2 ; i
 ++ ) { zcsv [ i ] = 0.0 ; } } } } void main_controlado_TrueRMS_Term (
 SimStruct * const S ) { } static void mdlOutputs ( SimStruct * S , int_T tid
 ) { B_main_controlado_T * _rtB ; DW_main_controlado_T * _rtDW ;
-P_main_controlado_T * _rtP ; real_T temp ; int32_T isHit ; _rtDW = ( (
-DW_main_controlado_T * ) ssGetRootDWork ( S ) ) ; _rtP = ( (
+P_main_controlado_T * _rtP ; X_main_controlado_T * _rtX ; real_T temp ;
+int32_T isHit ; _rtDW = ( ( DW_main_controlado_T * ) ssGetRootDWork ( S ) ) ;
+_rtX = ( ( X_main_controlado_T * ) ssGetContStates ( S ) ) ; _rtP = ( (
 P_main_controlado_T * ) ssGetModelRtp ( S ) ) ; _rtB = ( (
-B_main_controlado_T * ) _ssGetModelBlockIO ( S ) ) ; temp = _rtP -> P_6 *
+B_main_controlado_T * ) _ssGetModelBlockIO ( S ) ) ; temp = _rtP -> P_8 *
 ssGetT ( S ) ; if ( temp - muDoubleScalarFloor ( temp ) >= 0.5 ) { _rtB ->
-B_5_0_0 = _rtP -> P_5 ; } else { _rtB -> B_5_0_0 = - _rtP -> P_5 ; } _rtB ->
+B_5_0_0 = _rtP -> P_7 ; } else { _rtB -> B_5_0_0 = - _rtP -> P_7 ; } _rtB ->
 B_5_1_0 [ 0 ] = _rtB -> B_5_0_0 ; _rtB -> B_5_1_0 [ 1 ] = 0.0 ; _rtB ->
 B_5_1_0 [ 2 ] = 0.0 ; _rtB -> B_5_1_0 [ 3 ] = 0.0 ; _rtB -> B_5_2_0 = _rtP ->
-P_7 * _rtB -> B_5_0_0 ; _rtB -> B_5_3_0 [ 0 ] = _rtB -> B_5_2_0 ; _rtB ->
+P_9 * _rtB -> B_5_0_0 ; _rtB -> B_5_3_0 [ 0 ] = _rtB -> B_5_2_0 ; _rtB ->
 B_5_3_0 [ 1 ] = 0.0 ; _rtB -> B_5_3_0 [ 2 ] = 0.0 ; _rtB -> B_5_3_0 [ 3 ] =
 0.0 ; _rtB -> B_5_4_0 = ssGetT ( S ) ; isHit = ssIsSampleHit ( S , 1 , 0 ) ;
-if ( isHit != 0 ) { _rtB -> B_5_5_0 = _rtP -> P_8 ; } ssCallAccelRunBlock ( S
-, 5 , _rtDW -> Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_blkIdxToRun
-, SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 5 , 7 ,
+if ( isHit != 0 ) { _rtB -> B_5_5_0 = _rtP -> P_10 ; } _rtB -> B_5_6_0 = _rtX
+-> Integrator_CSTATE ; ssCallAccelRunBlock ( S , 5 , _rtDW ->
+Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_blkIdxToRun ,
 SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 5 , 8 , SS_CALL_MDL_OUTPUTS
 ) ; ssCallAccelRunBlock ( S , 5 , 9 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 5 , 12 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 5 , 23 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 5 , 26 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 10 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 13 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 14 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 17 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 18 , SS_CALL_MDL_OUTPUTS ) ;
+ssCallAccelRunBlock ( S , 5 , 27 , SS_CALL_MDL_OUTPUTS ) ;
 ssCallAccelRunBlock ( S , 5 , 28 , SS_CALL_MDL_OUTPUTS ) ;
-ssCallAccelRunBlock ( S , 5 , 30 , SS_CALL_MDL_OUTPUTS ) ; UNUSED_PARAMETER (
-tid ) ; } static void mdlOutputsTID2 ( SimStruct * S , int_T tid ) {
-B_main_controlado_T * _rtB ; P_main_controlado_T * _rtP ; _rtP = ( (
-P_main_controlado_T * ) ssGetModelRtp ( S ) ) ; _rtB = ( (
-B_main_controlado_T * ) _ssGetModelBlockIO ( S ) ) ; _rtB -> B_5_0_0_m = _rtP
--> P_9 ; _rtB -> B_5_2_0_c = ( _rtP -> P_10 != 0.0 ) ; _rtB -> B_5_3_0_k = !
-_rtB -> B_5_2_0_c ; _rtB -> B_5_5_0_c = ( _rtP -> P_11 != 0.0 ) ; _rtB ->
-B_5_6_0 = ! _rtB -> B_5_5_0_c ; UNUSED_PARAMETER ( tid ) ; }
+ssCallAccelRunBlock ( S , 5 , 29 , SS_CALL_MDL_OUTPUTS ) ; _rtB -> B_5_30_0 =
+_rtP -> P_12 * _rtB -> B_4_0_0 ; ssCallAccelRunBlock ( S , 5 , 33 ,
+SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 5 , 35 ,
+SS_CALL_MDL_OUTPUTS ) ; ssCallAccelRunBlock ( S , 5 , 37 ,
+SS_CALL_MDL_OUTPUTS ) ; UNUSED_PARAMETER ( tid ) ; } static void
+mdlOutputsTID2 ( SimStruct * S , int_T tid ) { B_main_controlado_T * _rtB ;
+P_main_controlado_T * _rtP ; _rtP = ( ( P_main_controlado_T * ) ssGetModelRtp
+( S ) ) ; _rtB = ( ( B_main_controlado_T * ) _ssGetModelBlockIO ( S ) ) ;
+_rtB -> B_5_1_0_m = ( _rtP -> P_13 != 0.0 ) ; _rtB -> B_5_2_0_c = ! _rtB ->
+B_5_1_0_m ; _rtB -> B_5_4_0_k = ( _rtP -> P_14 != 0.0 ) ; _rtB -> B_5_5_0_c =
+! _rtB -> B_5_4_0_k ; UNUSED_PARAMETER ( tid ) ; }
 #define MDL_UPDATE
 static void mdlUpdate ( SimStruct * S , int_T tid ) { B_main_controlado_T *
 _rtB ; DW_main_controlado_T * _rtDW ; P_main_controlado_T * _rtP ; _rtDW = (
 ( DW_main_controlado_T * ) ssGetRootDWork ( S ) ) ; _rtP = ( (
 P_main_controlado_T * ) ssGetModelRtp ( S ) ) ; _rtB = ( (
 B_main_controlado_T * ) _ssGetModelBlockIO ( S ) ) ; ssCallAccelRunBlock ( S
-, 4 , 8 , SS_CALL_MDL_UPDATE ) ; main_controlado_RMS_Update ( S , & _rtB ->
+, 4 , 10 , SS_CALL_MDL_UPDATE ) ; main_controlado_RMS_Update ( S , & _rtB ->
 RMS , & _rtDW -> RMS , & _rtP -> RMS ) ; main_controlado_RMS_Update ( S , &
 _rtB -> RMS_a , & _rtDW -> RMS_a , & _rtP -> RMS_a ) ;
 main_controlado_TrueRMS_Update ( S , & _rtB -> TrueRMS , & _rtDW -> TrueRMS ,
@@ -322,29 +329,30 @@ static void mdlDerivatives ( SimStruct * S ) { B_main_controlado_T * _rtB ;
 DW_main_controlado_T * _rtDW ; XDot_main_controlado_T * _rtXdot ; _rtDW = ( (
 DW_main_controlado_T * ) ssGetRootDWork ( S ) ) ; _rtXdot = ( (
 XDot_main_controlado_T * ) ssGetdX ( S ) ) ; _rtB = ( ( B_main_controlado_T *
-) _ssGetModelBlockIO ( S ) ) ; ssCallAccelRunBlock ( S , 4 , 8 ,
-SS_CALL_MDL_DERIVATIVES ) ; main_controlado_RMS_Deriv ( S , & _rtB -> RMS , &
-_rtDW -> RMS , & _rtXdot -> RMS ) ; main_controlado_RMS_Deriv ( S , & _rtB ->
-RMS_a , & _rtDW -> RMS_a , & _rtXdot -> RMS_a ) ;
-main_controlado_TrueRMS_Deriv ( S , & _rtB -> TrueRMS , & _rtDW -> TrueRMS ,
-& _rtXdot -> TrueRMS ) ; main_controlado_TrueRMS_Deriv ( S , & _rtB ->
-TrueRMS_e , & _rtDW -> TrueRMS_e , & _rtXdot -> TrueRMS_e ) ; }
+) _ssGetModelBlockIO ( S ) ) ; _rtXdot -> Integrator_CSTATE = _rtB ->
+B_5_30_0 ; ssCallAccelRunBlock ( S , 4 , 10 , SS_CALL_MDL_DERIVATIVES ) ;
+main_controlado_RMS_Deriv ( S , & _rtB -> RMS , & _rtDW -> RMS , & _rtXdot ->
+RMS ) ; main_controlado_RMS_Deriv ( S , & _rtB -> RMS_a , & _rtDW -> RMS_a ,
+& _rtXdot -> RMS_a ) ; main_controlado_TrueRMS_Deriv ( S , & _rtB -> TrueRMS
+, & _rtDW -> TrueRMS , & _rtXdot -> TrueRMS ) ; main_controlado_TrueRMS_Deriv
+( S , & _rtB -> TrueRMS_e , & _rtDW -> TrueRMS_e , & _rtXdot -> TrueRMS_e ) ;
+}
 #define MDL_FORCINGFUNCTION
 static void mdlForcingFunction ( SimStruct * S ) { B_main_controlado_T * _rtB
 ; DW_main_controlado_T * _rtDW ; XDot_main_controlado_T * _rtXdot ; _rtDW = (
 ( DW_main_controlado_T * ) ssGetRootDWork ( S ) ) ; _rtXdot = ( (
 XDot_main_controlado_T * ) ssGetdX ( S ) ) ; _rtB = ( ( B_main_controlado_T *
-) _ssGetModelBlockIO ( S ) ) ; ssCallAccelRunBlock ( S , 4 , 8 ,
-SS_CALL_MDL_FORCINGFUNCTION ) ; main_controlado_RMS_ForcingFunction ( S , &
-_rtB -> RMS , & _rtDW -> RMS , & _rtXdot -> RMS ) ;
-main_controlado_RMS_ForcingFunction ( S , & _rtB -> RMS_a , & _rtDW -> RMS_a
-, & _rtXdot -> RMS_a ) ; main_controlado_TrueRMS_ForcingFunction ( S , & _rtB
--> TrueRMS , & _rtDW -> TrueRMS , & _rtXdot -> TrueRMS ) ;
-main_controlado_TrueRMS_ForcingFunction ( S , & _rtB -> TrueRMS_e , & _rtDW
--> TrueRMS_e , & _rtXdot -> TrueRMS_e ) ; }
+) _ssGetModelBlockIO ( S ) ) ; _rtXdot -> Integrator_CSTATE = _rtB ->
+B_5_30_0 ; ssCallAccelRunBlock ( S , 4 , 10 , SS_CALL_MDL_FORCINGFUNCTION ) ;
+main_controlado_RMS_ForcingFunction ( S , & _rtB -> RMS , & _rtDW -> RMS , &
+_rtXdot -> RMS ) ; main_controlado_RMS_ForcingFunction ( S , & _rtB -> RMS_a
+, & _rtDW -> RMS_a , & _rtXdot -> RMS_a ) ;
+main_controlado_TrueRMS_ForcingFunction ( S , & _rtB -> TrueRMS , & _rtDW ->
+TrueRMS , & _rtXdot -> TrueRMS ) ; main_controlado_TrueRMS_ForcingFunction (
+S , & _rtB -> TrueRMS_e , & _rtDW -> TrueRMS_e , & _rtXdot -> TrueRMS_e ) ; }
 #define MDL_MASSMATRIX
-static void mdlMassMatrix ( SimStruct * S ) { ssCallAccelRunBlock ( S , 4 , 8
-, SS_CALL_MDL_MASSMATRIX ) ; }
+static void mdlMassMatrix ( SimStruct * S ) { ssCallAccelRunBlock ( S , 4 ,
+10 , SS_CALL_MDL_MASSMATRIX ) ; }
 #define MDL_ZERO_CROSSINGS
 static void mdlZeroCrossings ( SimStruct * S ) { B_main_controlado_T * _rtB ;
 DW_main_controlado_T * _rtDW ; P_main_controlado_T * _rtP ;
@@ -352,16 +360,16 @@ ZCV_main_controlado_T * _rtZCSV ; _rtDW = ( ( DW_main_controlado_T * )
 ssGetRootDWork ( S ) ) ; _rtZCSV = ( ( ZCV_main_controlado_T * )
 ssGetSolverZcSignalVector ( S ) ) ; _rtP = ( ( P_main_controlado_T * )
 ssGetModelRtp ( S ) ) ; _rtB = ( ( B_main_controlado_T * ) _ssGetModelBlockIO
-( S ) ) ; _rtZCSV -> Saturation1_UprLim_ZC = _rtB -> B_4_0_0 - _rtP -> P_0 ;
-_rtZCSV -> Saturation1_LwrLim_ZC = _rtB -> B_4_0_0 - _rtP -> P_1 ;
-ssCallAccelRunBlock ( S , 4 , 8 , SS_CALL_MDL_ZERO_CROSSINGS ) ;
+( S ) ) ; _rtZCSV -> Saturation005_UprLim_ZC = _rtB -> B_4_2_0 - _rtP -> P_1
+; _rtZCSV -> Saturation005_LwrLim_ZC = _rtB -> B_4_2_0 - _rtP -> P_2 ;
+ssCallAccelRunBlock ( S , 4 , 10 , SS_CALL_MDL_ZERO_CROSSINGS ) ;
 main_controlado_TrueRMS_ZC ( S , & _rtB -> TrueRMS , & _rtDW -> TrueRMS , &
 _rtP -> TrueRMS , & _rtZCSV -> TrueRMS ) ; main_controlado_TrueRMS_ZC ( S , &
 _rtB -> TrueRMS_e , & _rtDW -> TrueRMS_e , & _rtP -> TrueRMS_e , & _rtZCSV ->
 TrueRMS_e ) ; } static void mdlInitializeSizes ( SimStruct * S ) {
-ssSetChecksumVal ( S , 0 , 1181801003U ) ; ssSetChecksumVal ( S , 1 ,
-3615769611U ) ; ssSetChecksumVal ( S , 2 , 3025209634U ) ; ssSetChecksumVal (
-S , 3 , 3856292014U ) ; { mxArray * slVerStructMat = ( NULL ) ; mxArray *
+ssSetChecksumVal ( S , 0 , 2762527790U ) ; ssSetChecksumVal ( S , 1 ,
+3564735552U ) ; ssSetChecksumVal ( S , 2 , 4174249160U ) ; ssSetChecksumVal (
+S , 3 , 4180501822U ) ; { mxArray * slVerStructMat = ( NULL ) ; mxArray *
 slStrMat = mxCreateString ( "simulink" ) ; char slVerChar [ 10 ] ; int status
 = mexCallMATLAB ( 1 , & slVerStructMat , 1 , & slStrMat , "ver" ) ; if (
 status == 0 ) { mxArray * slVerMat = mxGetField ( slVerStructMat , 0 ,
@@ -382,7 +390,7 @@ P_main_controlado_T ) ) { static char msg [ 256 ] ; sprintf ( msg ,
 "not match for accelerator mex file." ) ; } } _ssSetModelRtp ( S , ( real_T *
 ) & main_controlado_rtDefaultP ) ; if ( ssGetSizeofDWork ( S ) == sizeof (
 DW_main_controlado_T ) ) { { ( ( DW_main_controlado_T * ) ssGetRootDWork ( S
-) ) -> STATE_1_MASS_MATRIX_PR = 0 ; } } rt_InitInfAndNaN ( sizeof ( real_T )
+) ) -> STATE_1_MASS_MATRIX_PR = 1 ; } } rt_InitInfAndNaN ( sizeof ( real_T )
 ) ; ( ( P_main_controlado_T * ) ssGetModelRtp ( S ) ) -> TrueRMS_e . P_7 =
 rtInf ; ( ( P_main_controlado_T * ) ssGetModelRtp ( S ) ) -> TrueRMS . P_7 =
 rtInf ; } static void mdlInitializeSampleTimes ( SimStruct * S ) {

@@ -1,6 +1,6 @@
 close all; clearvars;
 
-% Get images from a folder named "digits"
+% Get images from a folder
 train_images = read_imgs('train_digits');
 test_images = read_imgs('test_digits');
 
@@ -39,18 +39,19 @@ Y=sim(net,{1 num_iter},{},xc'); % Get outputs
 match_iter = 500; % i.e. we take the last iteration
 output = Y{match_iter}; % Recovered pattern
 output = reshape(output, nrows, ncolumns); % Reshape to image dimensions
-output(output == -1) = 0;
+output(output == -1) = 0; % Transform -1 to 0
 
+% Plot input and output image
 figure;
 tiledlayout(1,2,'TileSpacing','Compact');
 axis off; grid off;
 nexttile;
 input = reshape(xc, nrows, ncolumns);
 input(input == -1) = 0;
-imshow(input); % Show image in plot
+imshow(input);
 title("INPUT", 'FontSize', 16);
 nexttile;
-imshow(output); % Show image in plot
+imshow(output);
 title("OUTPUT", 'FontSize', 16);
 
 

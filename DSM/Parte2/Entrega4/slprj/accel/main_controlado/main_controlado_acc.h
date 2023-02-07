@@ -67,58 +67,61 @@ typedef struct { ZCSigState Saturationtoavoidnegativesqrt_UprLim_ZCE ;
 ZCSigState Saturationtoavoidnegativesqrt_LwrLim_ZCE ; }
 ZCE_TrueRMS_main_controlado_T ; typedef struct { real_T B_5_0_0 ; real_T
 B_5_1_0 [ 4 ] ; real_T B_5_2_0 ; real_T B_5_3_0 [ 4 ] ; real_T B_5_4_0 ;
-real_T B_5_5_0 ; real_T B_5_0_0_m ; real_T B_4_0_0 ; real_T B_4_1_0 ; real_T
-B_4_2_0 ; real_T B_4_3_0 ; real_T B_4_4_0 ; real_T B_4_5_0 [ 4 ] ; real_T
-B_4_6_0 ; real_T B_4_7_0 [ 4 ] ; real_T B_4_8_0 [ 43 ] ; real_T B_4_9_0 [ 5 ]
-; real_T B_4_13_0 ; real_T B_4_15_0 ; real_T B_4_16_0 ; boolean_T B_5_2_0_c ;
-boolean_T B_5_3_0_k ; boolean_T B_5_5_0_c ; boolean_T B_5_6_0 ; char_T
-pad_B_5_6_0 [ 4 ] ; B_TrueRMS_main_controlado_T TrueRMS_e ;
-B_TrueRMS_main_controlado_T TrueRMS ; B_RMS_main_controlado_T RMS_a ;
-B_RMS_main_controlado_T RMS ; } B_main_controlado_T ; typedef struct { real_T
-INPUT_2_1_1_Discrete [ 2 ] ; real_T INPUT_1_1_1_Discrete [ 2 ] ; real_T
-INPUT_3_1_1_Discrete [ 2 ] ; real_T INPUT_4_1_1_Discrete [ 2 ] ; real_T
-STATE_1_Discrete ; real_T OUTPUT_1_0_Discrete ; void * Scope_PWORK ; void *
-Pout_PWORK ; void * Scope_PWORK_p ; void * Scope1_PWORK ; void * Scope2_PWORK
-; void * Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_AlgLoopData ;
-void * STATE_1_Simulator ; void * STATE_1_SimData ; void * STATE_1_DiagMgr ;
-void * STATE_1_ZcLogger ; void * STATE_1_TsIndex ; void *
-OUTPUT_1_0_Simulator ; void * OUTPUT_1_0_SimData ; void * OUTPUT_1_0_DiagMgr
-; void * OUTPUT_1_0_ZcLogger ; void * OUTPUT_1_0_TsIndex ; int32_T
+real_T B_5_5_0 ; real_T B_5_6_0 ; real_T B_5_30_0 ; real_T B_4_0_0 ; real_T
+B_4_1_0 ; real_T B_4_2_0 ; real_T B_4_3_0 ; real_T B_4_4_0 ; real_T B_4_5_0 ;
+real_T B_4_6_0 ; real_T B_4_7_0 [ 4 ] ; real_T B_4_8_0 ; real_T B_4_9_0 [ 4 ]
+; real_T B_4_10_0 [ 43 ] ; real_T B_4_11_0 [ 5 ] ; real_T B_4_15_0 ; real_T
+B_4_17_0 ; real_T B_4_18_0 ; boolean_T B_5_1_0_m ; boolean_T B_5_2_0_c ;
+boolean_T B_5_4_0_k ; boolean_T B_5_5_0_c ; char_T pad_B_5_5_0_c [ 4 ] ;
+B_TrueRMS_main_controlado_T TrueRMS_e ; B_TrueRMS_main_controlado_T TrueRMS ;
+B_RMS_main_controlado_T RMS_a ; B_RMS_main_controlado_T RMS ; }
+B_main_controlado_T ; typedef struct { real_T INPUT_2_1_1_Discrete [ 2 ] ;
+real_T INPUT_1_1_1_Discrete [ 2 ] ; real_T INPUT_3_1_1_Discrete [ 2 ] ;
+real_T INPUT_4_1_1_Discrete [ 2 ] ; real_T STATE_1_Discrete ; real_T
+OUTPUT_1_0_Discrete ; void * ToWorkspace1_PWORK ; void * ToWorkspace3_PWORK ;
+void * ToWorkspace_PWORK ; void * ToWorkspace2_PWORK ; void * Pout_PWORK ;
+void * Scope3_PWORK ; void * Scope_PWORK ; void * Scope1_PWORK ; void *
+Scope2_PWORK ; void *
+Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_AlgLoopData ; void *
+STATE_1_Simulator ; void * STATE_1_SimData ; void * STATE_1_DiagMgr ; void *
+STATE_1_ZcLogger ; void * STATE_1_TsIndex ; void * OUTPUT_1_0_Simulator ;
+void * OUTPUT_1_0_SimData ; void * OUTPUT_1_0_DiagMgr ; void *
+OUTPUT_1_0_ZcLogger ; void * OUTPUT_1_0_TsIndex ; int32_T
 Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_sysIdxToRun ; int32_T
 Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_blkIdxToRun ; int32_T
 Synthesized_Atomic_Subsystem_For_Alg_Loop_1_Task_0_parentSysIdxToRun ; int_T
-STATE_1_Modes [ 12 ] ; int_T OUTPUT_1_0_Modes ; int_T Saturation1_MODE ;
+STATE_1_Modes [ 12 ] ; int_T OUTPUT_1_0_Modes ; int_T Saturation005_MODE ;
 int32_T STATE_1_MASS_MATRIX_PR ; boolean_T STATE_1_FirstOutput ; boolean_T
 OUTPUT_1_0_FirstOutput ; char_T pad_OUTPUT_1_0_FirstOutput [ 6 ] ;
 DW_TrueRMS_main_controlado_T TrueRMS_e ; DW_TrueRMS_main_controlado_T TrueRMS
 ; DW_RMS_main_controlado_T RMS_a ; DW_RMS_main_controlado_T RMS ; }
-DW_main_controlado_T ; typedef struct { real_T
+DW_main_controlado_T ; typedef struct { real_T Integrator_CSTATE ; real_T
 main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 X_TrueRMS_main_controlado_T TrueRMS_e ; X_TrueRMS_main_controlado_T TrueRMS ;
 X_RMS_main_controlado_T RMS_a ; X_RMS_main_controlado_T RMS ; }
-X_main_controlado_T ; typedef struct { real_T
+X_main_controlado_T ; typedef struct { real_T Integrator_CSTATE ; real_T
 main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 XDot_TrueRMS_main_controlado_T TrueRMS_e ; XDot_TrueRMS_main_controlado_T
 TrueRMS ; XDot_RMS_main_controlado_T RMS_a ; XDot_RMS_main_controlado_T RMS ;
-} XDot_main_controlado_T ; typedef struct { boolean_T
-main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
+} XDot_main_controlado_T ; typedef struct { boolean_T Integrator_CSTATE ;
+boolean_T main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 XDis_TrueRMS_main_controlado_T TrueRMS_e ; XDis_TrueRMS_main_controlado_T
 TrueRMS ; XDis_RMS_main_controlado_T RMS_a ; XDis_RMS_main_controlado_T RMS ;
-} XDis_main_controlado_T ; typedef struct { real_T
+} XDis_main_controlado_T ; typedef struct { real_T Integrator_CSTATE ; real_T
 main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 XAbsTol_TrueRMS_main_controlado_T TrueRMS_e ;
 XAbsTol_TrueRMS_main_controlado_T TrueRMS ; XAbsTol_RMS_main_controlado_T
 RMS_a ; XAbsTol_RMS_main_controlado_T RMS ; } CStateAbsTol_main_controlado_T
-; typedef struct { real_T
+; typedef struct { real_T Integrator_CSTATE ; real_T
 main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 XPtMin_TrueRMS_main_controlado_T TrueRMS_e ; XPtMin_TrueRMS_main_controlado_T
 TrueRMS ; XPtMin_RMS_main_controlado_T RMS_a ; XPtMin_RMS_main_controlado_T
-RMS ; } CXPtMin_main_controlado_T ; typedef struct { real_T
-main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
+RMS ; } CXPtMin_main_controlado_T ; typedef struct { real_T Integrator_CSTATE
+; real_T main_controladoRectificadorINDiodeprivateCjunctionvc [ 31 ] ;
 XPtMax_TrueRMS_main_controlado_T TrueRMS_e ; XPtMax_TrueRMS_main_controlado_T
 TrueRMS ; XPtMax_RMS_main_controlado_T RMS_a ; XPtMax_RMS_main_controlado_T
 RMS ; } CXPtMax_main_controlado_T ; typedef struct { real_T
-Saturation1_UprLim_ZC ; real_T Saturation1_LwrLim_ZC ; real_T
+Saturation005_UprLim_ZC ; real_T Saturation005_LwrLim_ZC ; real_T
 STATE_1_InversorMOSFET_Ideal_Switching4mosfet_equationzc_1_ZC ; real_T
 STATE_1_InversorMOSFET_Ideal_Switching5mosfet_equationzc_1_ZC ; real_T
 STATE_1_InversorMOSFET_Ideal_Switching6mosfet_equationzc_1_ZC ; real_T
@@ -132,8 +135,8 @@ STATE_1_RectificadorOUTDiode1zc_1_ZC ; real_T
 STATE_1_RectificadorOUTDiode2zc_1_ZC ; real_T
 STATE_1_RectificadorOUTDiode3zc_1_ZC ; ZCV_TrueRMS_main_controlado_T
 TrueRMS_e ; ZCV_TrueRMS_main_controlado_T TrueRMS ; } ZCV_main_controlado_T ;
-typedef struct { ZCSigState Saturation1_UprLim_ZCE ; ZCSigState
-Saturation1_LwrLim_ZCE ; ZCSigState
+typedef struct { ZCSigState Saturation005_UprLim_ZCE ; ZCSigState
+Saturation005_LwrLim_ZCE ; ZCSigState
 STATE_1_InversorMOSFET_Ideal_Switching4mosfet_equationzc_1_ZCE ; ZCSigState
 STATE_1_InversorMOSFET_Ideal_Switching5mosfet_equationzc_1_ZCE ; ZCSigState
 STATE_1_InversorMOSFET_Ideal_Switching6mosfet_equationzc_1_ZCE ; ZCSigState
@@ -147,8 +150,8 @@ STATE_1_RectificadorOUTDiode1zc_1_ZCE ; ZCSigState
 STATE_1_RectificadorOUTDiode2zc_1_ZCE ; ZCSigState
 STATE_1_RectificadorOUTDiode3zc_1_ZCE ; ZCE_TrueRMS_main_controlado_T
 TrueRMS_e ; ZCE_TrueRMS_main_controlado_T TrueRMS ; }
-PrevZCX_main_controlado_T ; typedef struct { int_T ir [ 22 ] ; int_T jc [ 38
-] ; real_T pr [ 22 ] ; } MassMatrix_main_controlado_T ; struct
+PrevZCX_main_controlado_T ; typedef struct { int_T ir [ 23 ] ; int_T jc [ 39
+] ; real_T pr [ 23 ] ; } MassMatrix_main_controlado_T ; struct
 P_RMS_main_controlado_T_ { real_T P_0 ; real_T P_1 ; real_T P_2 ; real_T P_3
 ; real_T P_4 ; real_T P_5 ; real_T P_6 ; real_T P_7 ; real_T P_8 ; real_T P_9
 ; real_T P_10 ; real_T P_11 ; real_T P_12 ; real_T P_13 ; real_T P_14 ;
@@ -157,8 +160,9 @@ P_20 ; real_T P_21 ; } ; struct P_TrueRMS_main_controlado_T_ { real_T P_0 ;
 real_T P_1 ; real_T P_2 ; real_T P_3 ; real_T P_4 ; real_T P_5 ; real_T P_6 ;
 real_T P_7 ; real_T P_8 ; } ; struct P_main_controlado_T_ { real_T P_0 ;
 real_T P_1 ; real_T P_2 ; real_T P_3 ; real_T P_4 ; real_T P_5 ; real_T P_6 ;
-real_T P_7 ; real_T P_8 ; real_T P_9 ; real_T P_10 ; real_T P_11 ;
-P_TrueRMS_main_controlado_T TrueRMS_e ; P_TrueRMS_main_controlado_T TrueRMS ;
-P_RMS_main_controlado_T RMS_a ; P_RMS_main_controlado_T RMS ; } ; extern
-P_main_controlado_T main_controlado_rtDefaultP ;
+real_T P_7 ; real_T P_8 ; real_T P_9 ; real_T P_10 ; real_T P_11 ; real_T
+P_12 ; real_T P_13 ; real_T P_14 ; P_TrueRMS_main_controlado_T TrueRMS_e ;
+P_TrueRMS_main_controlado_T TrueRMS ; P_RMS_main_controlado_T RMS_a ;
+P_RMS_main_controlado_T RMS ; } ; extern P_main_controlado_T
+main_controlado_rtDefaultP ;
 #endif
